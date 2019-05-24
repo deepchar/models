@@ -1,0 +1,1 @@
+1	accuracy-train=0.8156574775269071	accuracy-val=0.9767669531996179	converged=False	diverged=False	epoch=44	gradient-norm=0.0713537767331627	learning-rate=0.002	perplexity-train=2.37803097589601	perplexity-val=1.2215828564594933	time-elapsed=1105.9208636283875	used-gpu-memory=4144

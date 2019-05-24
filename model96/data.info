@@ -1,9 +1,0 @@
-!DataInfo
-num_shards: 1
-shared_vocab: false
-source_vocabs:
-- null
-sources:
-- /notebooks/sockeye/test_data/source_train.txt
-target: /notebooks/sockeye/test_data/target_train.txt
-target_vocab: null

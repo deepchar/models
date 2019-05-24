@@ -1,0 +1,229 @@
+[2019-05-23:23:46:24:INFO:sockeye.utils:log_sockeye_version] Sockeye version 1.18.98, commit unknown, path /notebooks/sockeye/sockeye/__init__.py
+[2019-05-23:23:46:24:INFO:sockeye.utils:log_mxnet_version] MXNet version 1.4.0, path /usr/local/lib/python3.6/dist-packages/mxnet/__init__.py
+[2019-05-23:23:46:24:INFO:sockeye.utils:log_basic_info] Command: /notebooks/sockeye/sockeye/train.py --source test_data/source_train.txt --target test_data/target_train.txt --validation-source test_data/source_test.txt --validation-target test_data/target_test.txt --encoder rnn --decoder rnn --num-layers 2:2 --num-embed 32 --rnn-num-hidden 512 --rnn-attention-type dot --metrics perplexity accuracy --max-num-checkpoint-not-improved 3 --initial-learning-rate 0.002 --max-seq-len 100 --output new_model2 --overwrite-output
+[2019-05-23:23:46:24:INFO:sockeye.utils:log_basic_info] Arguments: Namespace(allow_missing_params=False, batch_size=4096, batch_type='word', bucket_width=10, checkpoint_interval=4000, cnn_activation_type='glu', cnn_hidden_dropout=0.2, cnn_kernel_width=(3, 3), cnn_num_hidden=512, cnn_positional_embedding_type='learned', cnn_project_qkv=False, config=None, conv_embed_add_positional_encodings=False, conv_embed_dropout=0.0, conv_embed_max_filter_width=8, conv_embed_num_filters=(200, 200, 250, 250, 300, 300, 300, 300), conv_embed_num_highway_layers=4, conv_embed_output_dim=None, conv_embed_pool_stride=5, decode_and_evaluate=500, decode_and_evaluate_device_id=None, decode_and_evaluate_use_cpu=False, decoder='rnn', decoder_only=False, device_ids=[-1], disable_device_locking=False, dry_run=False, embed_dropout=(0.0, 0.0), embed_weight_init='default', encoder='rnn', fixed_param_names=[], fixed_param_strategy=None, gradient_clipping_threshold=1.0, gradient_clipping_type='none', gradient_compression_threshold=0.5, gradient_compression_type=None, initial_learning_rate=0.002, keep_initializations=False, keep_last_params=-1, kvstore='device', label_smoothing=0.1, layer_normalization=False, learning_rate_decay_optimizer_states_reset='off', learning_rate_decay_param_reset=False, learning_rate_half_life=10, learning_rate_reduce_factor=0.7, learning_rate_reduce_num_not_improved=8, learning_rate_schedule=None, learning_rate_scheduler_type='plateau-reduce', learning_rate_warmup=0, length_task=None, length_task_layers=1, length_task_weight=1.0, lhuc=None, lock_dir='/tmp', loglevel='INFO', loss='cross-entropy', loss_normalization_type='valid', max_checkpoints=None, max_num_checkpoint_not_improved=3, max_num_epochs=None, max_samples=None, max_seq_len=(100, 100), max_updates=None, metrics=['perplexity', 'accuracy'], min_num_epochs=None, min_samples=None, min_updates=None, momentum=None, monitor_pattern=None, monitor_stat_func='mx_default', no_bucketing=False, num_embed=(32, 32), num_layers=(2, 2), num_words=(0, 0), optimized_metric='perplexity', optimizer='adam', optimizer_params=None, output='new_model2', overwrite_output=True, pad_vocab_to_multiple_of=None, params=None, prepared_data=None, quiet=False, rnn_attention_coverage_max_fertility=2, rnn_attention_coverage_num_hidden=1, rnn_attention_coverage_type='count', rnn_attention_in_upper_layers=False, rnn_attention_mhdot_heads=None, rnn_attention_num_hidden=None, rnn_attention_type='dot', rnn_attention_use_prev_word=False, rnn_cell_type='lstm', rnn_context_gating=False, rnn_decoder_hidden_dropout=0.2, rnn_decoder_state_init='last', rnn_dropout_inputs=(0.0, 0.0), rnn_dropout_recurrent=(0.0, 0.0), rnn_dropout_states=(0.0, 0.0), rnn_enc_last_hidden_concat_to_embedding=False, rnn_encoder_reverse_input=False, rnn_first_residual_layer=2, rnn_forget_bias=0.0, rnn_h2h_init='orthogonal', rnn_num_hidden=512, rnn_residual_connections=False, rnn_scale_dot_attention=False, seed=13, shared_vocab=False, source='test_data/source_train.txt', source_factor_vocabs=[], source_factors=[], source_factors_combine='concat', source_factors_num_embed=[], source_vocab=None, stop_training_on_decoder_failure=False, target='test_data/target_train.txt', target_vocab=None, transformer_activation_type='relu', transformer_attention_heads=(8, 8), transformer_dropout_act=0.1, transformer_dropout_attention=0.1, transformer_dropout_prepost=0.1, transformer_feed_forward_num_hidden=(2048, 2048), transformer_model_size=(512, 512), transformer_positional_embedding_type='fixed', transformer_postprocess=('dr', 'dr'), transformer_preprocess=('n', 'n'), update_interval=1, use_cpu=False, validation_source='test_data/source_test.txt', validation_source_factors=[], validation_target='test_data/target_test.txt', weight_decay=0.0, weight_init='xavier', weight_init_scale=3.0, weight_init_xavier_factor_type='avg', weight_init_xavier_rand_type='uniform', weight_normalization=False, weight_tying=False, weight_tying_type='trg_softmax', word_min_count=(1, 1))
+[2019-05-23:23:46:24:INFO:__main__:train] Adjusting maximum length to reserve space for a BOS/EOS marker. New maximum length: (101, 101)
+[2019-05-23:23:46:24:INFO:sockeye.utils:acquire_gpus] Attempting to acquire 1 GPUs of 1 GPUs. The requested devices are: [-1]
+[2019-05-23:23:46:24:INFO:sockeye.utils:__enter__] Acquired GPU master_lock.
+[2019-05-23:23:46:24:INFO:sockeye.utils:__enter__] Acquired GPU 0.
+[2019-05-23:23:46:24:INFO:sockeye.utils:__exit__] Releasing GPU master_lock.
+[2019-05-23:23:46:24:INFO:__main__:train] Training Device(s): gpu(0)
+[2019-05-23:23:46:24:INFO:sockeye.vocab:load_or_create_vocabs] =============================
+[2019-05-23:23:46:24:INFO:sockeye.vocab:load_or_create_vocabs] Loading/creating vocabularies
+[2019-05-23:23:46:24:INFO:sockeye.vocab:load_or_create_vocabs] =============================
+[2019-05-23:23:46:24:INFO:sockeye.vocab:load_or_create_vocabs] (1) Surface form vocabularies (source & target)
+[2019-05-23:23:46:24:INFO:sockeye.vocab:build_from_paths] Building vocabulary from dataset(s): ['test_data/source_train.txt']
+[2019-05-23:23:46:27:INFO:sockeye.vocab:build_vocab] Vocabulary: types: 1065/1065/1065/1069 (initial/min_pruned/max_pruned/+special) [min_frequency=1, max_num_types=None, pad_to_multiple_of=None]
+[2019-05-23:23:46:27:INFO:sockeye.vocab:build_from_paths] Building vocabulary from dataset(s): ['test_data/target_train.txt']
+[2019-05-23:23:46:30:INFO:sockeye.vocab:build_vocab] Vocabulary: types: 1148/1148/1148/1152 (initial/min_pruned/max_pruned/+special) [min_frequency=1, max_num_types=None, pad_to_multiple_of=None]
+[2019-05-23:23:46:30:INFO:sockeye.data_io:get_training_data_iters] ===============================
+[2019-05-23:23:46:30:INFO:sockeye.data_io:get_training_data_iters] Creating training data iterator
+[2019-05-23:23:46:30:INFO:sockeye.data_io:get_training_data_iters] ===============================
+[2019-05-23:23:46:39:WARNING:sockeye.data_io:parallel_iterate] Parallel reading of sequences skipped 568 elements
+[2019-05-23:23:46:39:INFO:sockeye.data_io:analyze_sequence_lengths] 7919 sequences of maximum length (101, 101) in '/notebooks/sockeye/test_data/source_train.txt' and '/notebooks/sockeye/test_data/target_train.txt'.
+[2019-05-23:23:46:39:INFO:sockeye.data_io:analyze_sequence_lengths] Mean training target/source length ratio: 0.96 (+-0.05)
+[2019-05-23:23:46:48:WARNING:sockeye.data_io:parallel_iterate] Parallel reading of sequences skipped 568 elements
+[2019-05-23:23:46:48:INFO:sockeye.data_io:log] Tokens: source 360790 target 338847
+[2019-05-23:23:46:48:INFO:sockeye.data_io:log] Vocabulary coverage: source 100% target 100%
+[2019-05-23:23:46:48:INFO:sockeye.data_io:log] 7919 sequences across 11 buckets
+[2019-05-23:23:46:48:INFO:sockeye.data_io:log] 77092 sequences did not fit into buckets and were discarded
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (10, 10): 1921 samples in 4 batches of 637, ~4097.6 tokens/batch, trg/src length ratio: 1.00 (+-0.00)
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (20, 20): 882 samples in 4 batches of 287, ~4102.3 tokens/batch, trg/src length ratio: 0.96 (+-0.06)
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (30, 30): 331 samples in 3 batches of 165, ~4102.6 tokens/batch, trg/src length ratio: 0.97 (+-0.05)
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (40, 40): 693 samples in 6 batches of 123, ~4104.8 tokens/batch, trg/src length ratio: 0.93 (+-0.05)
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (50, 50): 529 samples in 6 batches of 95, ~4105.5 tokens/batch, trg/src length ratio: 0.95 (+-0.05)
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (60, 60): 543 samples in 7 batches of 78, ~4092.8 tokens/batch, trg/src length ratio: 0.95 (+-0.04)
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (70, 70): 417 samples in 7 batches of 66, ~4079.2 tokens/batch, trg/src length ratio: 0.94 (+-0.04)
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (80, 80): 1161 samples in 21 batches of 57, ~4085.5 tokens/batch, trg/src length ratio: 0.93 (+-0.03)
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (90, 90): 629 samples in 13 batches of 52, ~4115.3 tokens/batch, trg/src length ratio: 0.93 (+-0.04)
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (100, 100): 751 samples in 17 batches of 46, ~4069.8 tokens/batch, trg/src length ratio: 0.93 (+-0.04)
+[2019-05-23:23:46:48:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (101, 101): 62 samples in 1 batches of 64, ~6154.3 tokens/batch, trg/src length ratio: 0.95 (+-0.04)
+[2019-05-23:23:46:57:WARNING:sockeye.data_io:parallel_iterate] Parallel reading of sequences skipped 568 elements
+[2019-05-23:23:46:57:INFO:sockeye.data_io:load] Created bucketed parallel data set. Introduced padding: source=8.3% target=13.9%)
+[2019-05-23:23:46:57:INFO:sockeye.data_io:get_validation_data_iter] =================================
+[2019-05-23:23:46:57:INFO:sockeye.data_io:get_validation_data_iter] Creating validation data iterator
+[2019-05-23:23:46:57:INFO:sockeye.data_io:get_validation_data_iter] =================================
+[2019-05-23:23:46:59:WARNING:sockeye.data_io:parallel_iterate] Parallel reading of sequences skipped 331 elements
+[2019-05-23:23:46:59:INFO:sockeye.data_io:analyze_sequence_lengths] 1449 sequences of maximum length (101, 101) in '/notebooks/sockeye/test_data/source_test.txt' and '/notebooks/sockeye/test_data/target_test.txt'.
+[2019-05-23:23:46:59:INFO:sockeye.data_io:analyze_sequence_lengths] Mean training target/source length ratio: 0.97 (+-0.04)
+[2019-05-23:23:47:01:WARNING:sockeye.data_io:parallel_iterate] Parallel reading of sequences skipped 331 elements
+[2019-05-23:23:47:01:INFO:sockeye.data_io:log] Tokens: source 62137 target 58983
+[2019-05-23:23:47:01:INFO:sockeye.data_io:log] Vocabulary coverage: source 100% target 100%
+[2019-05-23:23:47:01:INFO:sockeye.data_io:log] 1449 sequences across 11 buckets
+[2019-05-23:23:47:01:INFO:sockeye.data_io:log] 19615 sequences did not fit into buckets and were discarded
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (10, 10): 427 samples in 1 batches of 637, ~4097.6 tokens/batch, trg/src length ratio: 1.00 (+-0.00)
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (20, 20): 117 samples in 1 batches of 287, ~4102.3 tokens/batch, trg/src length ratio: 0.99 (+-0.03)
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (30, 30): 60 samples in 1 batches of 165, ~4102.6 tokens/batch, trg/src length ratio: 0.97 (+-0.05)
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (40, 40): 110 samples in 1 batches of 123, ~4104.8 tokens/batch, trg/src length ratio: 0.96 (+-0.05)
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (50, 50): 101 samples in 2 batches of 95, ~4105.5 tokens/batch, trg/src length ratio: 0.95 (+-0.05)
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (60, 60): 128 samples in 2 batches of 78, ~4092.8 tokens/batch, trg/src length ratio: 0.95 (+-0.04)
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (70, 70): 114 samples in 2 batches of 66, ~4079.2 tokens/batch, trg/src length ratio: 0.95 (+-0.04)
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (80, 80): 146 samples in 3 batches of 57, ~4085.5 tokens/batch, trg/src length ratio: 0.95 (+-0.04)
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (90, 90): 120 samples in 3 batches of 52, ~4115.3 tokens/batch, trg/src length ratio: 0.94 (+-0.04)
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (100, 100): 119 samples in 3 batches of 46, ~4069.8 tokens/batch, trg/src length ratio: 0.94 (+-0.04)
+[2019-05-23:23:47:01:INFO:sockeye.data_io:describe_data_and_buckets] Bucket (101, 101): 7 samples in 1 batches of 64, ~6154.3 tokens/batch, trg/src length ratio: 0.93 (+-0.04)
+[2019-05-23:23:47:03:WARNING:sockeye.data_io:parallel_iterate] Parallel reading of sequences skipped 331 elements
+[2019-05-23:23:47:03:INFO:sockeye.data_io:load] Created bucketed parallel data set. Introduced padding: source=9.4% target=14.0%)
+[2019-05-23:23:47:04:INFO:__main__:create_data_iters_and_vocabs] Writing data config to '/notebooks/sockeye/new_model2/data.info'
+[2019-05-23:23:47:04:INFO:sockeye.vocab:vocab_to_json] Vocabulary saved to "/notebooks/sockeye/new_model2/vocab.src.0.json"
+[2019-05-23:23:47:04:INFO:sockeye.vocab:vocab_to_json] Vocabulary saved to "/notebooks/sockeye/new_model2/vocab.trg.0.json"
+[2019-05-23:23:47:04:INFO:__main__:train] Vocabulary sizes: source=[1069] target=1152
+[2019-05-23:23:47:04:INFO:sockeye.model:__init__] Config[_frozen=True, config_data=Config[_frozen=True, data_statistics=Config[_frozen=True, average_len_target_per_bucket=[6.432587194169709, 14.293650793650793, 24.864048338368576, 33.372294372294405, 43.2155009451796, 52.47145488029471, 61.80575539568343, 71.67527993109395, 79.13990461049289, 88.474034620506, 96.16129032258064], buckets=[(10, 10), (20, 20), (30, 30), (40, 40), (50, 50), (60, 60), (70, 70), (80, 80), (90, 90), (100, 100), (101, 101)], length_ratio_mean=0.9562659069658344, length_ratio_stats_per_bucket=[(0.9998958875585643, 0.004561978615347545), (0.9636921881415731, 0.0558779116540519), (0.9675630719236029, 0.05037692493004406), (0.9338014968601602, 0.04594605630952041), (0.9451020852972198, 0.04972788759404983), (0.9503303248247427, 0.04024988241285883), (0.9438011832078682, 0.04350991029928626), (0.9341934541544231, 0.032520771495413214), (0.9311161655799235, 0.04075587357915276), (0.9263003447372451, 0.03912604513122222), (0.9520919833918876, 0.04040211173869309)], length_ratio_std=0.04698753548625022, max_observed_len_source=101, max_observed_len_target=101, num_discarded=77092, num_sents=7919, num_sents_per_bucket=[1921, 882, 331, 693, 529, 543, 417, 1161, 629, 751, 62], num_tokens_source=360790, num_tokens_target=338847, num_unks_source=0, num_unks_target=0, size_vocab_source=1069, size_vocab_target=1152], max_seq_len_source=101, max_seq_len_target=101, num_source_factors=1, source_with_eos=True], config_decoder=Config[_frozen=True, attention_config=Config[_frozen=True, config_coverage=None, dtype=float32, input_previous_word=False, is_scaled=False, layer_normalization=False, num_heads=None, num_hidden=512, query_num_hidden=512, source_num_hidden=512, type=dot], attention_in_upper_layers=False, context_gating=False, dtype=float32, enc_last_hidden_concat_to_embedding=False, hidden_dropout=0.2, layer_normalization=False, max_seq_len_source=101, rnn_config=Config[_frozen=True, cell_type=lstm, dropout_inputs=0.0, dropout_recurrent=0.0, dropout_states=0.0, dtype=float32, first_residual_layer=2, forget_bias=0.0, lhuc=False, num_hidden=512, num_layers=2, residual=False], state_init=last, state_init_lhuc=False], config_embed_source=Config[_frozen=True, dropout=0.0, dtype=float32, factor_configs=None, num_embed=32, num_factors=1, source_factors_combine=concat, vocab_size=1069], config_embed_target=Config[_frozen=True, dropout=0.0, dtype=float32, factor_configs=None, num_embed=32, num_factors=1, source_factors_combine=concat, vocab_size=1152], config_encoder=Config[_frozen=True, conv_config=None, dtype=float32, reverse_input=False, rnn_config=Config[_frozen=True, cell_type=lstm, dropout_inputs=0.0, dropout_recurrent=0.0, dropout_states=0.0, dtype=float32, first_residual_layer=2, forget_bias=0.0, lhuc=False, num_hidden=512, num_layers=2, residual=False]], config_length_task=None, config_length_task_loss=None, config_loss=Config[_frozen=True, label_smoothing=0.1, length_task_link=None, length_task_weight=1.0, name=cross-entropy, normalization_type=valid, vocab_size=1152], lhuc=False, vocab_source_size=1069, vocab_target_size=1152, weight_normalization=False, weight_tying=False, weight_tying_type=None]
+[2019-05-23:23:47:04:INFO:sockeye.encoder:__init__] sockeye.encoder.EncoderSequence dtype: float32
+[2019-05-23:23:47:04:INFO:sockeye.encoder:__init__] sockeye.encoder.ConvertLayout dtype: float32
+[2019-05-23:23:47:04:INFO:sockeye.encoder:__init__] sockeye.encoder.BiDirectionalRNNEncoder dtype: float32
+[2019-05-23:23:47:04:INFO:sockeye.encoder:__init__] sockeye.encoder.RecurrentEncoder dtype: float32
+[2019-05-23:23:47:04:INFO:sockeye.encoder:__init__] sockeye.encoder.RecurrentEncoder dtype: float32
+[2019-05-23:23:47:04:INFO:sockeye.encoder:__init__] sockeye.encoder.RecurrentEncoder dtype: float32
+[2019-05-23:23:47:04:INFO:sockeye.encoder:__init__] sockeye.encoder.ConvertLayout dtype: float32
+[2019-05-23:23:47:04:INFO:sockeye.decoder:__init__] sockeye.decoder.RecurrentDecoder dtype: float32
+[2019-05-23:23:47:04:INFO:sockeye.encoder:__init__] sockeye.encoder.Embedding dtype: float32
+[2019-05-23:23:47:04:INFO:sockeye.encoder:__init__] sockeye.encoder.Embedding dtype: float32
+[2019-05-23:23:47:04:INFO:sockeye.loss:__init__] Loss: CrossEntropy(normalization_type=valid, label_smoothing=0.1)
+[2019-05-23:23:47:04:INFO:sockeye.training:_initialize] Using model loss: cross-entropy
+[2019-05-23:23:47:04:INFO:sockeye.training:_initialize] Using bucketing. Default max_seq_len=(101, 101)
+[2019-05-23:23:47:07:INFO:sockeye.model:save_config] Saved config to "/notebooks/sockeye/new_model2/config"
+[2019-05-23:23:47:07:INFO:sockeye.lr_scheduler:__init__] Will reduce the learning rate by a factor of 0.70 whenever the validation score doesn't improve 8 times.
+[2019-05-23:23:47:07:INFO:__main__:create_optimizer_config] Optimizer: Config[_frozen=False, gradient_clipping_threshold=1.0, gradient_clipping_type=none, initializer=<mxnet.initializer.Mixed object at 0x7f38efbbb160>, kvstore=device, name=adam, params={'wd': 0.0, 'learning_rate': 0.002, 'rescale_grad': 1.0, 'lr_scheduler': LearningRateSchedulerPlateauReduce(reduce_factor=0.70, reduce_num_not_improved=0)}, update_interval=1]
+[2019-05-23:23:47:07:INFO:__main__:create_optimizer_config] Gradient Compression: None
+[2019-05-23:23:47:07:INFO:sockeye.training:__init__] Logging training events for Tensorboard at '/notebooks/sockeye/new_model2/tensorboard'
+[2019-05-23:23:47:07:INFO:sockeye.checkpoint_decoder:__init__] Created CheckpointDecoder(max_input_len=-1, beam_size=5, model=new_model2, num_sentences=500, context=gpu(0))
+[2019-05-23:23:47:07:INFO:sockeye.training:fit] Early stopping by optimizing 'perplexity'
+[2019-05-23:23:47:08:INFO:sockeye.training:log_parameters] Model parameters: decoder_rnn_enc2decinit_0_bias: (512,), decoder_rnn_enc2decinit_0_weight: (512, 512), decoder_rnn_enc2decinit_1_bias: (512,), decoder_rnn_enc2decinit_1_weight: (512, 512), decoder_rnn_enc2decinit_2_bias: (512,), decoder_rnn_enc2decinit_2_weight: (512, 512), decoder_rnn_enc2decinit_3_bias: (512,), decoder_rnn_enc2decinit_3_weight: (512, 512), decoder_rnn_hidden_bias: (512,), decoder_rnn_hidden_weight: (512, 1024), decoder_rnn_l0_h2h_bias: (2048,), decoder_rnn_l0_h2h_weight: (2048, 512), decoder_rnn_l0_i2h_bias: (2048,), decoder_rnn_l0_i2h_weight: (2048, 544), decoder_rnn_l1_h2h_bias: (2048,), decoder_rnn_l1_h2h_weight: (2048, 512), decoder_rnn_l1_i2h_bias: (2048,), decoder_rnn_l1_i2h_weight: (2048, 512), encoder_birnn_forward_l0_h2h_bias: (1024,), encoder_birnn_forward_l0_h2h_weight: (1024, 256), encoder_birnn_forward_l0_i2h_bias: (1024,), encoder_birnn_forward_l0_i2h_weight: (1024, 32), encoder_birnn_reverse_l0_h2h_bias: (1024,), encoder_birnn_reverse_l0_h2h_weight: (1024, 256), encoder_birnn_reverse_l0_i2h_bias: (1024,), encoder_birnn_reverse_l0_i2h_weight: (1024, 32), encoder_rnn_l0_h2h_bias: (2048,), encoder_rnn_l0_h2h_weight: (2048, 512), encoder_rnn_l0_i2h_bias: (2048,), encoder_rnn_l0_i2h_weight: (2048, 512), source_embed_weight: (1069, 32), target_embed_weight: (1152, 32), target_output_bias: (1152,), target_output_weight: (1152, 512)
+[2019-05-23:23:47:08:INFO:sockeye.training:log_parameters] Fixed model parameters: 
+[2019-05-23:23:47:08:INFO:sockeye.training:log_parameters] Fixing 0 parameters (0.00%)
+[2019-05-23:23:47:08:INFO:sockeye.training:log_parameters] Learning 9200672 parameters (100.00%)
+[2019-05-23:23:47:08:INFO:sockeye.training:log_parameters] Total # of parameters: 9200672
+[2019-05-23:23:47:09:INFO:root:save_params_to_file] Saved params to "/notebooks/sockeye/new_model2/params.00000"
+[2019-05-23:23:47:09:INFO:sockeye.training:fit] Training started.
+[2019-05-23:23:47:29:INFO:sockeye.training:__call__] Epoch[0] Batch [50]	Speed: 281.26 samples/sec 12634.99 tokens/sec 2.62 updates/sec	perplexity=89.953367	accuracy=0.108216
+[2019-05-23:23:47:43:INFO:sockeye.training:__call__] Epoch[1] Batch [100]	Speed: 339.59 samples/sec 17289.85 tokens/sec 3.62 updates/sec	perplexity=77.617909	accuracy=0.114563
+[2019-05-23:23:47:56:INFO:sockeye.training:__call__] Epoch[1] Batch [150]	Speed: 404.83 samples/sec 17761.28 tokens/sec 3.67 updates/sec	perplexity=66.261968	accuracy=0.120427
+[2019-05-23:23:48:10:INFO:sockeye.training:__call__] Epoch[2] Batch [200]	Speed: 322.30 samples/sec 17365.69 tokens/sec 3.66 updates/sec	perplexity=56.906773	accuracy=0.136632
+[2019-05-23:23:48:24:INFO:sockeye.training:__call__] Epoch[2] Batch [250]	Speed: 432.17 samples/sec 17400.62 tokens/sec 3.61 updates/sec	perplexity=47.558308	accuracy=0.162826
+[2019-05-23:23:48:37:INFO:sockeye.training:__call__] Epoch[3] Batch [300]	Speed: 431.38 samples/sec 18051.57 tokens/sec 3.72 updates/sec	perplexity=39.733172	accuracy=0.191491
+[2019-05-23:23:48:51:INFO:sockeye.training:__call__] Epoch[3] Batch [350]	Speed: 349.23 samples/sec 17730.08 tokens/sec 3.69 updates/sec	perplexity=33.459935	accuracy=0.224579
+[2019-05-23:23:49:05:INFO:sockeye.training:__call__] Epoch[4] Batch [400]	Speed: 419.71 samples/sec 17906.15 tokens/sec 3.69 updates/sec	perplexity=28.144079	accuracy=0.260690
+[2019-05-23:23:49:18:INFO:sockeye.training:__call__] Epoch[5] Batch [450]	Speed: 348.64 samples/sec 17189.83 tokens/sec 3.61 updates/sec	perplexity=24.257217	accuracy=0.292330
+[2019-05-23:23:49:32:INFO:sockeye.training:__call__] Epoch[5] Batch [500]	Speed: 351.30 samples/sec 17548.95 tokens/sec 3.70 updates/sec	perplexity=21.131930	accuracy=0.321657
+[2019-05-23:23:49:46:INFO:sockeye.training:__call__] Epoch[6] Batch [550]	Speed: 336.71 samples/sec 17327.26 tokens/sec 3.61 updates/sec	perplexity=19.312449	accuracy=0.341052
+[2019-05-23:23:50:00:INFO:sockeye.training:__call__] Epoch[6] Batch [600]	Speed: 426.28 samples/sec 17711.75 tokens/sec 3.64 updates/sec	perplexity=17.532370	accuracy=0.361212
+[2019-05-23:23:50:13:INFO:sockeye.training:__call__] Epoch[7] Batch [650]	Speed: 425.36 samples/sec 17946.66 tokens/sec 3.72 updates/sec	perplexity=15.991645	accuracy=0.380511
+[2019-05-23:23:50:27:INFO:sockeye.training:__call__] Epoch[7] Batch [700]	Speed: 354.25 samples/sec 17284.86 tokens/sec 3.63 updates/sec	perplexity=14.747171	accuracy=0.397528
+[2019-05-23:23:50:41:INFO:sockeye.training:__call__] Epoch[8] Batch [750]	Speed: 303.67 samples/sec 17115.31 tokens/sec 3.60 updates/sec	perplexity=13.683586	accuracy=0.413156
+[2019-05-23:23:50:54:INFO:sockeye.training:__call__] Epoch[8] Batch [800]	Speed: 440.73 samples/sec 18222.21 tokens/sec 3.74 updates/sec	perplexity=12.810690	accuracy=0.426819
+[2019-05-23:23:51:08:INFO:sockeye.training:__call__] Epoch[9] Batch [850]	Speed: 418.37 samples/sec 17371.26 tokens/sec 3.59 updates/sec	perplexity=12.031084	accuracy=0.439724
+[2019-05-23:23:51:21:INFO:sockeye.training:__call__] Epoch[10] Batch [900]	Speed: 412.24 samples/sec 17984.33 tokens/sec 3.72 updates/sec	perplexity=11.368837	accuracy=0.451572
+[2019-05-23:23:51:35:INFO:sockeye.training:__call__] Epoch[10] Batch [950]	Speed: 327.32 samples/sec 17418.50 tokens/sec 3.64 updates/sec	perplexity=10.759939	accuracy=0.463204
+[2019-05-23:23:51:48:INFO:sockeye.training:__call__] Epoch[11] Batch [1000]	Speed: 359.33 samples/sec 17675.28 tokens/sec 3.72 updates/sec	perplexity=10.233488	accuracy=0.473688
+[2019-05-23:23:52:02:INFO:sockeye.training:__call__] Epoch[11] Batch [1050]	Speed: 338.40 samples/sec 17437.60 tokens/sec 3.63 updates/sec	perplexity=9.784570	accuracy=0.483132
+[2019-05-23:23:52:16:INFO:sockeye.training:__call__] Epoch[12] Batch [1100]	Speed: 400.89 samples/sec 17404.92 tokens/sec 3.62 updates/sec	perplexity=9.372281	accuracy=0.492178
+[2019-05-23:23:52:30:INFO:sockeye.training:__call__] Epoch[12] Batch [1150]	Speed: 416.84 samples/sec 17739.86 tokens/sec 3.68 updates/sec	perplexity=8.997751	accuracy=0.500668
+[2019-05-23:23:52:44:INFO:sockeye.training:__call__] Epoch[13] Batch [1200]	Speed: 269.61 samples/sec 16673.98 tokens/sec 3.51 updates/sec	perplexity=8.645220	accuracy=0.509131
+[2019-05-23:23:52:57:INFO:sockeye.training:__call__] Epoch[14] Batch [1250]	Speed: 481.31 samples/sec 18537.53 tokens/sec 3.79 updates/sec	perplexity=8.357580	accuracy=0.516226
+[2019-05-23:23:53:11:INFO:sockeye.training:__call__] Epoch[14] Batch [1300]	Speed: 368.77 samples/sec 17654.84 tokens/sec 3.67 updates/sec	perplexity=8.062779	accuracy=0.523852
+[2019-05-23:23:53:25:INFO:sockeye.training:__call__] Epoch[15] Batch [1350]	Speed: 365.55 samples/sec 16835.76 tokens/sec 3.53 updates/sec	perplexity=7.809220	accuracy=0.530528
+[2019-05-23:23:53:38:INFO:sockeye.training:__call__] Epoch[15] Batch [1400]	Speed: 366.33 samples/sec 17619.12 tokens/sec 3.67 updates/sec	perplexity=7.550501	accuracy=0.537805
+[2019-05-23:23:53:52:INFO:sockeye.training:__call__] Epoch[16] Batch [1450]	Speed: 474.73 samples/sec 18576.87 tokens/sec 3.82 updates/sec	perplexity=7.321717	accuracy=0.544401
+[2019-05-23:23:54:06:INFO:sockeye.training:__call__] Epoch[16] Batch [1500]	Speed: 310.82 samples/sec 16833.87 tokens/sec 3.54 updates/sec	perplexity=7.113918	accuracy=0.550578
+[2019-05-23:23:54:19:INFO:sockeye.training:__call__] Epoch[17] Batch [1550]	Speed: 390.96 samples/sec 17609.85 tokens/sec 3.63 updates/sec	perplexity=6.894966	accuracy=0.557434
+[2019-05-23:23:54:33:INFO:sockeye.training:__call__] Epoch[17] Batch [1600]	Speed: 332.14 samples/sec 17513.59 tokens/sec 3.69 updates/sec	perplexity=6.680749	accuracy=0.564573
+[2019-05-23:23:54:47:INFO:sockeye.training:__call__] Epoch[18] Batch [1650]	Speed: 433.28 samples/sec 17876.65 tokens/sec 3.70 updates/sec	perplexity=6.455101	accuracy=0.572505
+[2019-05-23:23:55:00:INFO:sockeye.training:__call__] Epoch[19] Batch [1700]	Speed: 365.26 samples/sec 17612.56 tokens/sec 3.66 updates/sec	perplexity=6.223981	accuracy=0.581193
+[2019-05-23:23:55:14:INFO:sockeye.training:__call__] Epoch[19] Batch [1750]	Speed: 470.04 samples/sec 18114.33 tokens/sec 3.73 updates/sec	perplexity=5.973416	accuracy=0.591196
+[2019-05-23:23:55:28:INFO:sockeye.training:__call__] Epoch[20] Batch [1800]	Speed: 274.16 samples/sec 16631.69 tokens/sec 3.52 updates/sec	perplexity=5.730598	accuracy=0.601291
+[2019-05-23:23:55:41:INFO:sockeye.training:__call__] Epoch[20] Batch [1850]	Speed: 430.34 samples/sec 17883.94 tokens/sec 3.67 updates/sec	perplexity=5.499620	accuracy=0.611324
+[2019-05-23:23:55:55:INFO:sockeye.training:__call__] Epoch[21] Batch [1900]	Speed: 257.35 samples/sec 16724.23 tokens/sec 3.57 updates/sec	perplexity=5.289051	accuracy=0.620844
+[2019-05-23:23:56:09:INFO:sockeye.training:__call__] Epoch[21] Batch [1950]	Speed: 451.38 samples/sec 17793.61 tokens/sec 3.68 updates/sec	perplexity=5.094053	accuracy=0.629996
+[2019-05-23:23:56:23:INFO:sockeye.training:__call__] Epoch[22] Batch [2000]	Speed: 393.23 samples/sec 17601.06 tokens/sec 3.65 updates/sec	perplexity=4.912529	accuracy=0.638834
+[2019-05-23:23:56:36:INFO:sockeye.training:__call__] Epoch[23] Batch [2050]	Speed: 367.34 samples/sec 17798.24 tokens/sec 3.69 updates/sec	perplexity=4.744821	accuracy=0.647295
+[2019-05-23:23:56:50:INFO:sockeye.training:__call__] Epoch[23] Batch [2100]	Speed: 414.33 samples/sec 17440.23 tokens/sec 3.58 updates/sec	perplexity=4.589310	accuracy=0.655417
+[2019-05-23:23:57:04:INFO:sockeye.training:__call__] Epoch[24] Batch [2150]	Speed: 371.59 samples/sec 17733.64 tokens/sec 3.72 updates/sec	perplexity=4.446810	accuracy=0.663099
+[2019-05-23:23:57:17:INFO:sockeye.training:__call__] Epoch[24] Batch [2200]	Speed: 385.50 samples/sec 17764.63 tokens/sec 3.68 updates/sec	perplexity=4.312918	accuracy=0.670544
+[2019-05-23:23:57:31:INFO:sockeye.training:__call__] Epoch[25] Batch [2250]	Speed: 313.17 samples/sec 17344.12 tokens/sec 3.67 updates/sec	perplexity=4.189949	accuracy=0.677587
+[2019-05-23:23:57:45:INFO:sockeye.training:__call__] Epoch[25] Batch [2300]	Speed: 409.45 samples/sec 17438.97 tokens/sec 3.59 updates/sec	perplexity=4.074292	accuracy=0.684404
+[2019-05-23:23:57:59:INFO:sockeye.training:__call__] Epoch[26] Batch [2350]	Speed: 369.82 samples/sec 17144.11 tokens/sec 3.59 updates/sec	perplexity=3.967057	accuracy=0.690898
+[2019-05-23:23:58:12:INFO:sockeye.training:__call__] Epoch[26] Batch [2400]	Speed: 394.23 samples/sec 17856.09 tokens/sec 3.69 updates/sec	perplexity=3.865739	accuracy=0.697197
+[2019-05-23:23:58:26:INFO:sockeye.training:__call__] Epoch[27] Batch [2450]	Speed: 327.36 samples/sec 17437.60 tokens/sec 3.65 updates/sec	perplexity=3.771226	accuracy=0.703231
+[2019-05-23:23:58:40:INFO:sockeye.training:__call__] Epoch[28] Batch [2500]	Speed: 434.36 samples/sec 17438.55 tokens/sec 3.61 updates/sec	perplexity=3.683548	accuracy=0.708961
+[2019-05-23:23:58:53:INFO:sockeye.training:__call__] Epoch[28] Batch [2550]	Speed: 290.96 samples/sec 17556.81 tokens/sec 3.71 updates/sec	perplexity=3.599816	accuracy=0.714568
+[2019-05-23:23:59:07:INFO:sockeye.training:__call__] Epoch[29] Batch [2600]	Speed: 413.06 samples/sec 17474.11 tokens/sec 3.62 updates/sec	perplexity=3.521927	accuracy=0.719900
+[2019-05-23:23:59:21:INFO:sockeye.training:__call__] Epoch[29] Batch [2650]	Speed: 408.78 samples/sec 17697.87 tokens/sec 3.66 updates/sec	perplexity=3.447837	accuracy=0.725084
+[2019-05-23:23:59:34:INFO:sockeye.training:__call__] Epoch[30] Batch [2700]	Speed: 326.30 samples/sec 17377.42 tokens/sec 3.66 updates/sec	perplexity=3.378823	accuracy=0.730015
+[2019-05-23:23:59:48:INFO:sockeye.training:__call__] Epoch[30] Batch [2750]	Speed: 442.10 samples/sec 17764.68 tokens/sec 3.65 updates/sec	perplexity=3.312631	accuracy=0.734837
+[2019-05-24:00:00:02:INFO:sockeye.training:__call__] Epoch[31] Batch [2800]	Speed: 345.89 samples/sec 17582.19 tokens/sec 3.67 updates/sec	perplexity=3.250144	accuracy=0.739482
+[2019-05-24:00:00:15:INFO:sockeye.training:__call__] Epoch[32] Batch [2850]	Speed: 406.55 samples/sec 17667.19 tokens/sec 3.67 updates/sec	perplexity=3.191178	accuracy=0.743944
+[2019-05-24:00:00:29:INFO:sockeye.training:__call__] Epoch[32] Batch [2900]	Speed: 356.16 samples/sec 17421.62 tokens/sec 3.66 updates/sec	perplexity=3.135222	accuracy=0.748256
+[2019-05-24:00:00:43:INFO:sockeye.training:__call__] Epoch[33] Batch [2950]	Speed: 402.51 samples/sec 17796.31 tokens/sec 3.66 updates/sec	perplexity=3.081581	accuracy=0.752465
+[2019-05-24:00:00:56:INFO:sockeye.training:__call__] Epoch[33] Batch [3000]	Speed: 390.42 samples/sec 17978.11 tokens/sec 3.76 updates/sec	perplexity=3.030904	accuracy=0.756508
+[2019-05-24:00:01:10:INFO:sockeye.training:__call__] Epoch[34] Batch [3050]	Speed: 365.87 samples/sec 17066.64 tokens/sec 3.55 updates/sec	perplexity=2.982272	accuracy=0.760451
+[2019-05-24:00:01:24:INFO:sockeye.training:__call__] Epoch[34] Batch [3100]	Speed: 437.60 samples/sec 17962.34 tokens/sec 3.71 updates/sec	perplexity=2.936348	accuracy=0.764235
+[2019-05-24:00:01:37:INFO:sockeye.training:__call__] Epoch[35] Batch [3150]	Speed: 299.96 samples/sec 17114.74 tokens/sec 3.60 updates/sec	perplexity=2.892110	accuracy=0.767936
+[2019-05-24:00:01:51:INFO:sockeye.training:__call__] Epoch[35] Batch [3200]	Speed: 430.19 samples/sec 17975.68 tokens/sec 3.70 updates/sec	perplexity=2.849759	accuracy=0.771537
+[2019-05-24:00:02:04:INFO:sockeye.training:__call__] Epoch[36] Batch [3250]	Speed: 324.25 samples/sec 17725.38 tokens/sec 3.75 updates/sec	perplexity=2.809614	accuracy=0.774996
+[2019-05-24:00:02:18:INFO:sockeye.training:__call__] Epoch[37] Batch [3300]	Speed: 404.08 samples/sec 17394.49 tokens/sec 3.58 updates/sec	perplexity=2.770921	accuracy=0.778377
+[2019-05-24:00:02:32:INFO:sockeye.training:__call__] Epoch[37] Batch [3350]	Speed: 351.74 samples/sec 16913.62 tokens/sec 3.56 updates/sec	perplexity=2.734194	accuracy=0.781633
+[2019-05-24:00:02:46:INFO:sockeye.training:__call__] Epoch[38] Batch [3400]	Speed: 347.87 samples/sec 17513.98 tokens/sec 3.61 updates/sec	perplexity=2.698513	accuracy=0.784837
+[2019-05-24:00:02:59:INFO:sockeye.training:__call__] Epoch[38] Batch [3450]	Speed: 354.00 samples/sec 17898.44 tokens/sec 3.76 updates/sec	perplexity=2.666757	accuracy=0.787754
+[2019-05-24:00:03:13:INFO:sockeye.training:__call__] Epoch[39] Batch [3500]	Speed: 527.33 samples/sec 18328.18 tokens/sec 3.70 updates/sec	perplexity=2.640436	accuracy=0.790213
+[2019-05-24:00:03:27:INFO:sockeye.training:__call__] Epoch[39] Batch [3550]	Speed: 362.04 samples/sec 17425.16 tokens/sec 3.66 updates/sec	perplexity=2.610968	accuracy=0.792926
+[2019-05-24:00:03:40:INFO:sockeye.training:__call__] Epoch[40] Batch [3600]	Speed: 379.32 samples/sec 17495.61 tokens/sec 3.65 updates/sec	perplexity=2.581811	accuracy=0.795651
+[2019-05-24:00:03:54:INFO:sockeye.training:__call__] Epoch[41] Batch [3650]	Speed: 341.59 samples/sec 17258.06 tokens/sec 3.61 updates/sec	perplexity=2.553397	accuracy=0.798338
+[2019-05-24:00:04:08:INFO:sockeye.training:__call__] Epoch[41] Batch [3700]	Speed: 333.29 samples/sec 17448.83 tokens/sec 3.67 updates/sec	perplexity=2.525930	accuracy=0.800971
+[2019-05-24:00:04:22:INFO:sockeye.training:__call__] Epoch[42] Batch [3750]	Speed: 411.40 samples/sec 17673.66 tokens/sec 3.64 updates/sec	perplexity=2.499215	accuracy=0.803556
+[2019-05-24:00:04:36:INFO:sockeye.training:__call__] Epoch[42] Batch [3800]	Speed: 275.63 samples/sec 16780.73 tokens/sec 3.56 updates/sec	perplexity=2.473274	accuracy=0.806093
+[2019-05-24:00:04:49:INFO:sockeye.training:__call__] Epoch[43] Batch [3850]	Speed: 501.37 samples/sec 18505.12 tokens/sec 3.79 updates/sec	perplexity=2.448370	accuracy=0.808559
+[2019-05-24:00:05:03:INFO:sockeye.training:__call__] Epoch[43] Batch [3900]	Speed: 381.16 samples/sec 17014.64 tokens/sec 3.52 updates/sec	perplexity=2.424055	accuracy=0.810989
+[2019-05-24:00:05:17:INFO:sockeye.training:__call__] Epoch[44] Batch [3950]	Speed: 331.59 samples/sec 17520.71 tokens/sec 3.70 updates/sec	perplexity=2.400722	accuracy=0.813345
+[2019-05-24:00:05:30:INFO:sockeye.training:__call__] Epoch[44] Batch [4000]	Speed: 425.39 samples/sec 17814.79 tokens/sec 3.66 updates/sec	perplexity=2.378031	accuracy=0.815657
+[2019-05-24:00:05:30:INFO:root:save_params_to_file] Saved params to "/notebooks/sockeye/new_model2/params.00001"
+[2019-05-24:00:05:30:INFO:sockeye.training:fit] Checkpoint [1]	Updates=4000 Epoch=44 Samples=414732 Time-cost=1101.281 Updates/sec=3.632
+[2019-05-24:00:05:30:INFO:sockeye.training:fit] Checkpoint [1]	Train-perplexity=2.378031
+[2019-05-24:00:05:30:INFO:sockeye.training:fit] Checkpoint [1]	Train-accuracy=0.815657
+[2019-05-24:00:05:32:INFO:sockeye.training:fit] Checkpoint [1]	Validation-perplexity=1.221583
+[2019-05-24:00:05:32:INFO:sockeye.training:fit] Checkpoint [1]	Validation-accuracy=0.976767
+[2019-05-24:00:05:32:INFO:sockeye.training:start_decoder] Starting process: Decoder-1
+[2019-05-24:00:05:34:INFO:sockeye.training:fit] Validation-perplexity improved to 1.221583 (delta=inf).
+[2019-05-24:00:05:36:INFO:sockeye.utils:log_gpu_memory_usage] GPU 0: 4144/16278 MB (25.46%)
+[2019-05-24:00:05:58:INFO:sockeye.training:__call__] Epoch[45] Batch [4050]	Speed: 186.69 samples/sec 8700.06 tokens/sec 1.80 updates/sec	perplexity=1.123644	accuracy=0.998164
+[2019-05-24:00:06:18:INFO:sockeye.training:__call__] Epoch[46] Batch [4100]	Speed: 238.80 samples/sec 11779.75 tokens/sec 2.48 updates/sec	perplexity=1.122863	accuracy=0.998366
+[2019-05-24:00:06:34:INFO:sockeye.training:__call__] Epoch[46] Batch [4150]	Speed: 283.49 samples/sec 14637.65 tokens/sec 3.08 updates/sec	perplexity=1.122240	accuracy=0.998570
+[2019-05-24:00:06:36:INFO:sockeye.utils:__exit__] Releasing GPU 0.
+[2019-05-24:00:06:36:ERROR:root:exception_hook] Uncaught exception
+Traceback (most recent call last):
+  File "/usr/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/notebooks/sockeye/sockeye/train.py", line 966, in <module>
+    main()
+  File "/notebooks/sockeye/sockeye/train.py", line 832, in main
+    train(args)
+  File "/notebooks/sockeye/sockeye/train.py", line 962, in train
+    existing_parameters=args.params)
+  File "/notebooks/sockeye/sockeye/training.py", line 675, in fit
+    self._step(self.model, batch, checkpoint_interval, metric_train, metric_loss)
+  File "/notebooks/sockeye/sockeye/training.py", line 829, in _step
+    model.run_forward_backward(batch, metric_train)
+  File "/notebooks/sockeye/sockeye/training.py", line 279, in run_forward_backward
+    self.module.update_metric(metric, batch.label)
+  File "/usr/local/lib/python3.6/dist-packages/mxnet/module/bucketing_module.py", line 530, in update_metric
+    self._curr_module.update_metric(eval_metric, labels, pre_sliced)
+  File "/usr/local/lib/python3.6/dist-packages/mxnet/module/module.py", line 773, in update_metric
+    self._exec_group.update_metric(eval_metric, labels, pre_sliced)
+  File "/usr/local/lib/python3.6/dist-packages/mxnet/module/executor_group.py", line 639, in update_metric
+    eval_metric.update_dict(labels_, preds)
+  File "/usr/local/lib/python3.6/dist-packages/mxnet/metric.py", line 304, in update_dict
+    metric.update_dict(labels, preds)
+  File "/usr/local/lib/python3.6/dist-packages/mxnet/metric.py", line 132, in update_dict
+    self.update(label, pred)
+  File "/usr/local/lib/python3.6/dist-packages/mxnet/metric.py", line 865, in update
+    label = label.as_in_context(pred.context).reshape((label.size,))
+  File "/usr/local/lib/python3.6/dist-packages/mxnet/ndarray/ndarray.py", line 2128, in as_in_context
+    return self.copyto(context)
+  File "/usr/local/lib/python3.6/dist-packages/mxnet/ndarray/ndarray.py", line 2077, in copyto
+    return _internal._copyto(self, out=hret)
+  File "<string>", line 25, in _copyto
+  File "/usr/local/lib/python3.6/dist-packages/mxnet/_ctypes/ndarray.py", line 92, in _imperative_invoke
+    ctypes.byref(out_stypes)))
+KeyboardInterrupt
