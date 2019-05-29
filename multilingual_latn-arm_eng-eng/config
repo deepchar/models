@@ -1,0 +1,157 @@
+!ModelConfig
+config_data: !DataConfig
+  data_statistics: !DataStatistics
+    average_len_target_per_bucket:
+    - null
+    - 19.083333333333332
+    - 22.928571428571427
+    - 37.66666666666667
+    - 49.94369260512313
+    - 53.944380174799285
+    - null
+    buckets:
+    - !!python/tuple
+      - 10
+      - 10
+    - !!python/tuple
+      - 20
+      - 20
+    - !!python/tuple
+      - 30
+      - 30
+    - !!python/tuple
+      - 40
+      - 40
+    - !!python/tuple
+      - 50
+      - 50
+    - !!python/tuple
+      - 60
+      - 60
+    - !!python/tuple
+      - 61
+      - 61
+    length_ratio_mean: 1.0013626654174688
+    length_ratio_stats_per_bucket:
+    - &id001 !!python/tuple
+      - null
+      - null
+    - !!python/tuple
+      - 1.0
+      - 0.0
+    - !!python/tuple
+      - 1.0
+      - 0.0
+    - !!python/tuple
+      - 1.001360544217687
+      - 0.006084538714285129
+    - !!python/tuple
+      - 1.0022210452288607
+      - 0.006674356570311192
+    - !!python/tuple
+      - 1.0013199684334277
+      - 0.005000548353804809
+    - *id001
+    length_ratio_std: 0.005096170527606955
+    max_observed_len_source: 60
+    max_observed_len_target: 60
+    num_discarded: 0
+    num_sents: 173440
+    num_sents_per_bucket:
+    - 0
+    - 12
+    - 28
+    - 21
+    - 8276
+    - 165103
+    - 0
+    num_tokens_source: 9308914
+    num_tokens_target: 9321375
+    num_unks_source: 0
+    num_unks_target: 0
+    size_vocab_source: 1562
+    size_vocab_target: 1596
+  max_seq_len_source: 61
+  max_seq_len_target: 61
+  num_source_factors: 1
+  source_with_eos: true
+config_decoder: !RecurrentDecoderConfig
+  attention_config: !AttentionConfig
+    config_coverage: null
+    dtype: float32
+    input_previous_word: false
+    is_scaled: false
+    layer_normalization: false
+    num_heads: null
+    num_hidden: 256
+    query_num_hidden: 256
+    source_num_hidden: 256
+    type: dot
+  attention_in_upper_layers: false
+  context_gating: false
+  dtype: float32
+  enc_last_hidden_concat_to_embedding: false
+  hidden_dropout: 0.2
+  layer_normalization: false
+  max_seq_len_source: 61
+  rnn_config: !RNNConfig
+    cell_type: lstm
+    dropout_inputs: 0.0
+    dropout_recurrent: 0.0
+    dropout_states: 0.0
+    dtype: float32
+    first_residual_layer: 2
+    forget_bias: 0.0
+    lhuc: false
+    num_hidden: 256
+    num_layers: 3
+    residual: false
+  state_init: last
+  state_init_lhuc: false
+config_embed_source: !EmbeddingConfig
+  dropout: 0.0
+  dtype: float32
+  factor_configs: null
+  num_embed: 32
+  num_factors: 1
+  source_factors_combine: concat
+  vocab_size: 1562
+config_embed_target: !EmbeddingConfig
+  dropout: 0.0
+  dtype: float32
+  factor_configs: null
+  num_embed: 32
+  num_factors: 1
+  source_factors_combine: concat
+  vocab_size: 1596
+config_encoder: !RecurrentEncoderConfig
+  conv_config: null
+  dtype: float32
+  reverse_input: false
+  rnn_config: !RNNConfig
+    cell_type: lstm
+    dropout_inputs: 0.0
+    dropout_recurrent: 0.0
+    dropout_states: 0.0
+    dtype: float32
+    first_residual_layer: 2
+    forget_bias: 0.0
+    lhuc: false
+    num_hidden: 256
+    num_layers: 3
+    residual: false
+config_length_task: null
+config_length_task_loss: null
+config_loss: !LossConfig
+  label_smoothing: 0.1
+  length_task_link: null
+  length_task_weight: 1.0
+  name: cross-entropy
+  normalization_type: valid
+  vocab_size: 1596
+lhuc: false
+vocab_source_size: 1562
+vocab_target_size: 1596
+weight_normalization: false
+weight_tying: false
+weight_tying_type: null
